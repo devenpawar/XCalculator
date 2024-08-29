@@ -37,23 +37,9 @@ function Calculator() {
         }}
       >
         {
-          <Paper
-            elevation={1}
-            style={{
-              marginBottom: 20,
-              padding: 10,
-              height: 50,
-              textAlign: "right",
-              lineHeight: "30px",
-              fontSize: "24px",
-              borderRadius: 4,
-            }}
-          >
-            {value}
-          </Paper>
-        }
-        {isSubmit && (
-          <Paper
+          <input
+            type="text"
+            value={value}
             style={{
               marginBottom: 20,
               padding: 5,
@@ -63,9 +49,22 @@ function Calculator() {
               fontSize: "24px",
               textAlign: "center",
             }}
-          >
-            {finalAnswer}
-          </Paper>
+          />
+        }
+        {isSubmit && (
+          <input
+            style={{
+              marginBottom: 20,
+              border: "none",
+              padding: 5,
+              height: 30,
+              textAlign: "right",
+              lineHeight: "30px",
+              fontSize: "24px",
+              textAlign: "center",
+            }}
+            value={finalAnswer}
+          />
         )}
         <Grid container spacing={1}>
           <Grid item xs={3}>
