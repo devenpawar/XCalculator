@@ -8,7 +8,8 @@ function Calculator() {
   const [finalAnswer, setFinalAnswer] = useState("");
 
   const submitHandler = () => {
-    setFinalAnswer(eval(value));
+    if (value === "") setFinalAnswer("Error");
+    else setFinalAnswer(eval(value));
     setIsSubmit(true);
   };
 
@@ -52,7 +53,7 @@ function Calculator() {
           />
         }
         {isSubmit && (
-          <input
+          <div
             style={{
               marginBottom: 20,
               border: "none",
@@ -63,8 +64,10 @@ function Calculator() {
               fontSize: "24px",
               textAlign: "center",
             }}
-            value={finalAnswer}
-          />
+          >
+            {" "}
+            {finalAnswer}{" "}
+          </div>
         )}
         <Grid container spacing={1}>
           <Grid item xs={3}>
